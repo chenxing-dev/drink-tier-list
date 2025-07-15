@@ -9,7 +9,7 @@ export default function Header({ drinks }: { drinks: Drink[] }) {
       <div className="flex flex-row justify-between items-center gap-3">
         {/* 左侧标题区域 */}
         <div className="flex items-baseline gap-3">
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight">饮料 Tier List</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight">饮料 Tier List</h1>
           {/* 移动端隐藏的副标题 */}
           <p className="hidden md:block text-neutral-700 font-medium italic border-l-2 border-black pl-3">好喝难喝，喝过才敢评</p>
         </div>

@@ -11,7 +11,7 @@ export default function DrinkModal({ drink, onClose }: { drink: Drink; onClose: 
         <div className="mb-4">
           <div className="flex justify-between items-start mb-3">
             <div>
-              <h2 className="text-3xl font-black">{drink.name}</h2>
+              <h2 className="text-3xl font-black text-black">{drink.name}</h2>
               <p className="text-lg text-neutral-700 font-bold">{drink.brand}</p>
             </div>
             <span className="bg-pink-300 text-black px-3 py-1 font-bold border-2 border-black">{drink.type}</span>
