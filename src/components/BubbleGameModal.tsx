@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect, useCallback } from "preact/hooks";
 
 // 气泡类型
 interface Bubble {
@@ -22,8 +22,8 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
   const bubbleColors = ["bg-red-400 border-red-600", "bg-yellow-300 border-yellow-500", "bg-green-400 border-green-600", "bg-blue-400 border-blue-600", "bg-purple-400 border-purple-600", "bg-pink-400 border-pink-600"];
 
   // 创建新气泡
-  const createBubble = () => {
-    if (!gameActive) return;
+  const createBubble = useCallback(() => {
+    if (!gameActive || bubbles.length > 20) return;// 限制最大泡泡数量
 
     const colorIndex = Math.floor(Math.random() * bubbleColors.length);
 
@@ -32,13 +32,13 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
       x: Math.random() * 80 + 10, // 10-90% 水平位置
       y: 100, // 从底部开始
       size: Math.floor(Math.random() * 40) + 30, // 30-70px
-      speed: Math.random() * 2 + 1, // 1-3px/帧
+      speed: Math.random() * 2.5 + 1.8,
       points: Math.floor(Math.random() * 3) + 1, // 1-3分
       color: bubbleColors[colorIndex]
     };
 
     setBubbles(prev => [...prev, newBubble]);
-  };
+  }, [gameActive, bubbles.length]);
 
   // 更新气泡位置
   const updateBubbles = () => {
@@ -68,15 +68,21 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
 
     const gameLoop = setInterval(() => {
       updateBubbles();
-
-      // 每0.5秒创建新气泡
-      if (Math.random() > 0.3) {
-        createBubble();
-      }
     }, 50);
 
-    return () => clearInterval(gameLoop);
-  }, [gameActive]);
+    // 创建泡泡的独立定时器
+    const interval = 100; // 
+    const bubbleInterval = setInterval(() => {
+      if (Math.random() > 0.5 && bubbles.length < 8) { // 减少泡泡密度
+        createBubble();
+      }
+    }, interval);
+
+    return () => {
+      clearInterval(gameLoop);
+      clearInterval(bubbleInterval);
+    };
+  }, [gameActive, bubbles.length]);
 
   // 计时器
   useEffect(() => {
@@ -110,19 +116,19 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
         <h2 className="text-3xl font-black mb-4 text-center text-blue-600">气泡小挑战</h2>
 
         {/* 游戏信息栏 */}
-        <div className="flex justify-between items-center mb-4 bg-blue-100 border-3 border-black p-2">
-          <div>
-            <span className="font-bold">时间: </span>
-            <span className={`font-black ${timeLeft < 10 ? "text-red-600" : "text-black"}`}>{timeLeft}秒</span>
+        <div className="flex justify-between items-center mb-4 bg-yellow-200 border-4 border-black p-3 shadow-neo">
+          <div className="flex items-center">
+            <span className="font-black mr-2">时间:</span>
+            {timeLeft}秒
           </div>
-          <div>
-            <span className="font-bold">积分: </span>
-            <span className="font-black text-purple-600">{score}</span>
+          <div className="flex items-center">
+            <span className="font-black mr-2">积分:</span>
+            {score}
           </div>
         </div>
 
         {/* 游戏区域 */}
-        <div className="game-area relative h-64 bg-gradient-to-b from-blue-200 to-blue-400 border-3 border-black overflow-hidden select-none">
+        <div className="game-area relative h-64 bg-blue-100 border-4 border-black inset-shadow-neo overflow-hidden select-none">
           {/* 气泡 */}
           {bubbles.map(bubble => (
             <div
@@ -136,38 +142,43 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
               }}
               onClick={() => gameActive && popBubble(bubble.id, bubble.points)}
             >
-              <div className="w-full h-full bg-white/70 rounded-full border-3 border-blue-300 flex items-center justify-center">
-                <span className="font-bold text-blue-600">+{bubble.points}</span>
+              <div className={`w-full h-full rounded-full border-4 border-black flex items-center justify-center  shadow-neo ${bubble.color}`}>
+                <span className="font-black text-lg">+{bubble.points}</span>
               </div>
             </div>
           ))}
 
           {/* 游戏结束提示 */}
           {!gameActive && (
-            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-              <p className="text-2xl font-black text-white mb-4">游戏结束!</p>
-              <p className="text-xl text-white">获得积分: {score}</p>
+            <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-4 border-4 border-yellow-400">
+              <p className="text-3xl font-black text-yellow-400 mb-2">游戏结束!</p>
+              <p className="text-2xl text-white font-bold">获得积分: {score}</p>
             </div>
           )}
         </div>
 
         {/* 游戏控制 */}
-        <div className="mt-4 flex justify-center gap-3">
+        <div className="mt-3 flex flex-wrap justify-center gap-3">
           {gameActive ? (
-            <button className="bg-red-500 text-white font-bold px-4 py-2 border-3 border-black shadow-neo hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all" onClick={() => setGameActive(false)}>
+            <button
+              className="bg-red-500 text-white font-bold px-6 py-3 border-3 border-black shadow-neo hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+              onClick={() => setGameActive(false)}
+            >
               结束游戏
             </button>
           ) : (
-            <button className="bg-green-500 text-white font-bold px-4 py-2 border-3 border-black shadow-neo hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all" onClick={startNewGame}>
+            <button
+              className="bg-green-500 text-white font-bold px-4 py-2 border-3 border-black shadow-neo hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+              onClick={startNewGame}
+            >
               再玩一次
             </button>
           )}
         </div>
 
         {/* 游戏说明 */}
-        <div className="mt-4 text-sm text-center text-gray-600">
-          <p>点击气泡获取积分，每个气泡1-3分</p>
-          <p>30秒内获取尽可能多的积分!</p>
+        <div className="mt-4 text-center">
+          <p class="text-sm">点击气泡获取积分 • {totalTime}秒挑战 • 1积分=0.1元优惠</p>
         </div>
       </div>
     </div>

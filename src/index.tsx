@@ -40,7 +40,7 @@ export function App() {
           </div>
         )}
         {/* 下方广告横幅 */}
-        <div class="w-full mt-4 grid md:grid-cols-2 gap-4">
+        <div class="w-full mt-4 grid lg:grid-cols-2 gap-4">
           <div className="border-4 border-black bg-gradient-to-r from-yellow-400 to-pink-400 p-4 shadow-neo">
             <div className="flex items-center justify-between">
               <div>
