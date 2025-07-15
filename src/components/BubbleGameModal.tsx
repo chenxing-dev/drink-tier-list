@@ -8,6 +8,7 @@ interface Bubble {
   size: number;
   speed: number;
   points: number;
+  color: string;
 }
 
 export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
@@ -17,9 +18,14 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [gameActive, setGameActive] = useState(true);
 
+  // 气泡颜色
+  const bubbleColors = ["bg-red-400 border-red-600", "bg-yellow-300 border-yellow-500", "bg-green-400 border-green-600", "bg-blue-400 border-blue-600", "bg-purple-400 border-purple-600", "bg-pink-400 border-pink-600"];
+
   // 创建新气泡
   const createBubble = () => {
     if (!gameActive) return;
+
+    const colorIndex = Math.floor(Math.random() * bubbleColors.length);
 
     const newBubble: Bubble = {
       id: Date.now(),
@@ -27,7 +33,8 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
       y: 100, // 从底部开始
       size: Math.floor(Math.random() * 40) + 30, // 30-70px
       speed: Math.random() * 2 + 1, // 1-3px/帧
-      points: Math.floor(Math.random() * 3) + 1 // 1-3分
+      points: Math.floor(Math.random() * 3) + 1, // 1-3分
+      color: bubbleColors[colorIndex]
     };
 
     setBubbles(prev => [...prev, newBubble]);
@@ -99,7 +106,8 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="bg-white border-4 border-black w-full max-w-md p-6 relative shadow-neo" onClick={e => e.stopPropagation()}>
-        <h2 className="text-2xl font-black mb-4 text-center text-blue-600">气泡挑战赛</h2>
+        {/* 标题 */}
+        <h2 className="text-3xl font-black mb-4 text-center text-blue-600">气泡小挑战</h2>
 
         {/* 游戏信息栏 */}
         <div className="flex justify-between items-center mb-4 bg-blue-100 border-3 border-black p-2">
