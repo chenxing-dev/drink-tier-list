@@ -2,26 +2,59 @@
 @import "tailwindcss";
 
 @theme {
-    --shadow-neo: 4px 4px 0px 0px #000;
-    --animate-appear: appear 0.3s ease-out forwards;
+  --shadow-neo: 4px 4px 0px 0px #000;
+  --animate-appear: appear 0.3s ease-out forwards;
+  --animate-ping-once: ping-once 0.5s ease-out;
+  --animate-marquee: marquee 10s linear infinite;
+  --animate-marquee-loop: marquee-loop 10s linear infinite;
 
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ping-once {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee-loop {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 }
 
-
 body {
-    font-family: 'Noto Sans SC', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #f0f0f0;
+  font-family: "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
 }

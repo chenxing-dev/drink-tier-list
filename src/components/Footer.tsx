@@ -8,9 +8,9 @@ export default function Footer() {
                     </div>
                     {/* 版权和作者信息 - 单行显示 */}
                     <div className="flex flex-wrap justify-center items-center gap-1 text-xs md:text-sm">
-                        <span className="font-bold">© {new Date().getFullYear()} 饮料测评图鉴</span>
+                        <span className="font-bold">© {new Date().getFullYear()} 饮料测评 Tier List</span>
                         <span className="hidden md:inline">·</span>
-                        <span className="text-gray-700 italic">by chenxing-dev</span>
+                        <span className="text-gray-700 italic">by 陈刑</span>
                     </div>
                 </div>
             </div>
