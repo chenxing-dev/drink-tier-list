@@ -28,12 +28,16 @@ export default function DrinkModal({ drink, onClose }: { drink: Drink; onClose: 
             <span className="bg-pink-300 text-black px-3 py-1 font-bold border-2 border-black">{drink.type}</span>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {drink.tags.map((tag, index) => (
-              <span key={index} className="bg-blue-300 text-black text-sm px-2 py-0.5 font-bold border border-black">
-                {tag}
-              </span>
-            ))}
+          <div className="mt-4 flex justify-between items-center">
+            <div className="flex flex-wrap gap-2">
+              {drink.tags.map((tag, index) => (
+                <span key={index} className="bg-blue-300 text-black text-sm px-2 py-0.5 font-bold border-2 border-black">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {/* 价格标签 */}
+            <div className="bg-yellow-400 text-black font-bold px-2 flex items-center border border-black rounded-full shadow-neo">¥{drink.price}</div>
           </div>
         </div>
 

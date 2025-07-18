@@ -65,3 +65,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f0f0f0;
 }
+
+/* 滚动条更细 */
+* {
+  scrollbar-width: thin;
+}
