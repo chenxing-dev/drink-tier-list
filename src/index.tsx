@@ -1,5 +1,5 @@
 import { hydrate, prerender as ssr } from "preact-iso";
-import { useState, useEffect } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { drinks } from "./data/drinks";
 import Header from "./components/Header";
 import TierList from "./components/TierList";
