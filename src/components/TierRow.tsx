@@ -14,7 +14,7 @@ export default function TierRow({ level, drinks }: { level: TierLevel; drinks: D
       </div>
 
       {/* 饮料卡片区域 */}
-      <div className="flex-grow bg-white overflow-x-auto p-1 pb-2 md:p-2 flex space-x-2 md:space-x-3">
+      <div className="flex-grow bg-white overflow-x-auto overflow-y-clip p-1 pb-2 md:p-2 flex space-x-2 md:space-x-3">
         {drinks.length > 0
           ? drinks.map(drink => (
             <div key={drink.id} className="relative h-full aspect-square flex-shrink-0 cursor-pointer group" onClick={() => setSelectedDrink(drink)}>

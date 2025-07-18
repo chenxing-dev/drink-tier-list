@@ -1,11 +1,22 @@
 import { Drink } from "../types";
 import CloseButton from "./CloseButton";
+import { getDrinkImageUrl, getDefaultDrinkImageUrl } from "../utils/paths";
+import { useState } from "preact/hooks";
 
 export default function DrinkModal({ drink, onClose }: { drink: Drink; onClose: () => void }) {
+  const [drinkImageError, setDrinkImageError] = useState(false);
+
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-white border-4 border-black w-full max-w-lg p-6 relative shadow-neo animate-appear" onClick={e => e.stopPropagation()}>
+      <div className="relative bg-white border-4 border-black w-full max-w-lg p-6 relative shadow-neo animate-appear" onClick={e => e.stopPropagation()}>
         <CloseButton onClose={onClose} />
+
+        <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 flex flex-col gap-4 mb-4 scale-80 -rotate-15">
+          {/* 饮料实物图 */}
+          <div className="flex-1 flex items-center justify-center p-4">
+            <img src={drinkImageError ? getDefaultDrinkImageUrl() : getDrinkImageUrl(drink.id)} alt={drink.name} className="max-h-40 object-contain" onError={() => setDrinkImageError(true)} />
+          </div>
+        </div>
 
         {/* 饮料信息 */}
         <div className="mb-4">
