@@ -2,6 +2,7 @@ export type Drink = {
     id: string;
     brand: string;
     name: string;
+    price: number;
     tier: 'S' | 'A' | 'B' | 'C' | 'D';
     tags: string[];
     type: string;

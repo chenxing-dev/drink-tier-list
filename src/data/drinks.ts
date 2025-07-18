@@ -2,9 +2,10 @@ import { Drink } from '../types';
 
 export const drinks: Drink[] = [
     {
-        id: '1',
+        id: 'CP0001',
         brand: '茶百道',
         name: '超级大瓜',
+        price: 16,
         tier: 'A',
         tags: ['清爽', '量大'],
         type: '茶饮',

@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		host: '0.0.0.0',
 	},
-	base: "/drink-tier-list",
+	base: "/drink-tier-list/",
 	plugins: [
 		tailwindcss(),
 		preact({
