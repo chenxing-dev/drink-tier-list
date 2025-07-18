@@ -1,9 +1,14 @@
-import { TierLevel, Drink } from "../types";
 import { useState } from "preact/hooks";
+import { TierLevel, Drink } from "../types";
 import DrinkCard from './DrinkCard';
 import DrinkModal from "./DrinkModal";
 
-export default function TierRow({ level, drinks }: { level: TierLevel; drinks: Drink[] }) {
+interface TierRowProps {
+  level: TierLevel;
+  drinks: Drink[];
+}
+
+export default function TierRow({ level, drinks }: TierRowProps) {
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
   return (
     <div className={`flex h-[112px] md:h-[130px] lg:h-[180px] border-b-4 border-black`}>
