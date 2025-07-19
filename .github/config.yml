@@ -1,0 +1,24 @@
+# 自动添加标签和分配
+suggestion:
+  name: 饮料测评建议
+  description: 用户推荐的饮品测评建议
+  labels: ["suggestion"]
+  title: "[建议] {{ brand }} {{ drink }}"
+  body:
+    - type: input
+      id: brand
+      attributes:
+        label: 品牌
+        description: 饮料品牌名称
+        placeholder: 例如：喜茶、瑞幸咖啡
+    - type: input
+      id: drink
+      attributes:
+        label: 饮品名称
+        description: 具体饮品名称
+        placeholder: 例如：多肉葡萄、生椰拿铁
+    - type: textarea
+      id: reason
+      attributes:
+        label: 推荐理由
+        description: 为什么推荐这款饮品

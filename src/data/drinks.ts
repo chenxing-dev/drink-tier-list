@@ -58,7 +58,7 @@ export const drinks: Drink[] = [
   },
   {
     id: "CT0001",
-    brand: "库迪",
+    brand: "库迪咖啡",
     name: "阳光青提气泡冰萃",
     price: 9.9,
     tier: "B",
@@ -80,7 +80,7 @@ export const drinks: Drink[] = [
   },
   {
     id: "KFC0001",
-    brand: "KFC",
+    brand: "肯德基",
     name: "浓浓抹茶拿铁",
     price: 9.9,
     tier: "C",
@@ -91,7 +91,7 @@ export const drinks: Drink[] = [
   },
   {
     id: "KFC1001",
-    brand: "KFC",
+    brand: "肯德基",
     name: "哈基米宝宝蛋挞",
     price: 10,
     tier: "D",
@@ -176,5 +176,16 @@ export const drinks: Drink[] = [
     type: "果茶",
     date: "2025-07-19",
     comment: "甘蔗清甜，解渴，"
+  },
+  {
+    id: "LL0001",
+    brand: "LINEE林里",
+    name: "招牌手打柠檬茶",
+    price: 9.9,
+    tier: "C",
+    tags: ["柠檬", "红茶"],
+    type: "果茶",
+    date: "2025-07-19",
+    comment: "喝起来像泡了三天的茶包，柠檬很涩，7分糖甜度不够"
   }
 ];
