@@ -1,19 +1,17 @@
 name: 饮料测评建议
 description: 用户推荐的饮品测评建议
 labels: ["suggestion"]
-title: "测评建议：{{ brand }} - {{ drink }}"
+title: "测评建议：品牌 - 饮品名"
 body:
   - type: input
     id: brand
     attributes:
-      label: 品牌
-      description: 饮料品牌名称
+      label: 饮料品牌名称
       placeholder: 例如：茶月山
   - type: input
     id: drink
     attributes:
       label: 饮品名称
-      description: 具体饮品名称
       placeholder: 例如：汕头油柑茶
   - type: input
     id: request
@@ -25,3 +23,9 @@ body:
     attributes:
       label: 推荐理由
       description: 为什么推荐这款饮品
+  - type: textarea
+    id: other
+    attributes:
+      label: 其他说明
+      description: 可添加购买渠道、价格等信息
+      placeholder: 例如：广州有门店，价格18-20元
