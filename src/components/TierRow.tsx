@@ -11,7 +11,7 @@ interface TierRowProps {
 export default function TierRow({ level, drinks }: TierRowProps) {
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
   return (
-    <div className={`flex h-[112px] md:h-[130px] lg:h-[180px] border-b-4 border-black`}>
+    <div className={`flex h-[112px] md:h-[130px] lg:h-[170px] border-b-4 border-black`}>
       {/* 等级标签区域 */}
       <div className={`${level.color} w-16 md:w-20 flex-shrink-0 flex flex-col items-center justify-center p-1 md:p-2 text-white font-black border-r-4 border-black`}>
         <span className="text-2xl md:text-3xl">{level.label}</span>
