@@ -2,7 +2,11 @@ import { Drink } from "../types";
 import { getDrinkImageUrl, getLabelImageUrl } from "../utils/paths";
 import LazyImage from "./LazyImage";
 
-export default function DrinkCard({ drink }: { drink: Drink }) {
+interface DrinkCardProps {
+  drink: Drink;
+}
+
+export default function DrinkCard({ drink }: DrinkCardProps) {
 
   return (
     <div className="relative flex-shrink-0 cursor-pointer h-full">

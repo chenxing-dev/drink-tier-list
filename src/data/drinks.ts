@@ -6,8 +6,8 @@ export const drinks: Drink[] = [
     brand: "茶百道",
     name: "超级大瓜",
     price: 18.04,
-    tier: "B",
-    tags: ["西瓜", "清爽"],
+    tier: "C",
+    tags: ["西瓜", "椰奶"],
     type: "茶饮",
     date: "2025-07-12",
     comment: "西瓜果肉多，清爽不甜腻。不过奶冻有点多余，下次飞奶冻"
@@ -61,7 +61,7 @@ export const drinks: Drink[] = [
     brand: "库迪",
     name: "阳光青提气泡冰萃",
     price: 9.9,
-    tier: "C",
+    tier: "B",
     tags: ["青提", "气泡水", "咖啡"],
     type: "咖啡",
     date: "2025-07-13",
@@ -77,17 +77,6 @@ export const drinks: Drink[] = [
     type: "咖啡",
     date: "2025-07-14",
     comment: "搭早餐买才划算"
-  },
-  {
-    id: "SB1001",
-    brand: "星巴克",
-    name: "爆汁脆肠酥皮卷",
-    price: 13,
-    tier: "B",
-    tags: ["小吃"],
-    type: "食品",
-    date: "2025-07-14",
-    comment: "脆肠爆汁是真的，酥皮也是真的，但价格偏高。"
   },
   {
     id: "KFC0001",
@@ -117,14 +106,14 @@ export const drinks: Drink[] = [
     name: "荔枝鲜",
     price: 15.2,
     tier: "C",
-    tags: ["清淡", "果味不足"],
+    tags: ["荔枝"],
     type: "果茶",
     date: "2025-07-14",
     comment: "荔枝果肉超多，但味道淡得跟水一样。爷爷你还是专心泡茶吧！"
   },
   {
     id: "FF0001",
-    brand: "急急脚咖啡公司",
+    brand: "急急脚",
     name: "苹果柚子冰咖",
     price: 22,
     tier: "B",
@@ -149,7 +138,7 @@ export const drinks: Drink[] = [
     brand: "陈文鼎",
     name: "黑糖珍珠牛奶",
     price: 12,
-    tier: "S",
+    tier: "A",
     tags: ["珍珠", "牛奶"],
     type: "奶茶",
     date: "2025-07-15",
@@ -157,7 +146,7 @@ export const drinks: Drink[] = [
   },
   {
     id: "UQ0001",
-    brand: "丘大叔",
+    brand: "丘大叔柠檬茶",
     name: "麒麟瓜柠檬茶",
     price: 6,
     tier: "B",
@@ -176,5 +165,16 @@ export const drinks: Drink[] = [
     type: "奶茶",
     date: "2025-07-18",
     comment: "21块喝芒果味糯米饭！没果肉，一杯下去饱腹感太强，当饭吃吧！"
+  },
+  {
+    id: "ZR0001",
+    brand: "周容记茶铺",
+    name: "清润甘蔗柠绿",
+    price: 13.4,
+    tier: "S",
+    tags: ["甘蔗", "柠檬", "绿茶"],
+    type: "果茶",
+    date: "2025-07-19",
+    comment: "甘蔗清甜，解渴，"
   }
 ];

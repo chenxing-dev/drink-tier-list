@@ -24,19 +24,3 @@ export function getDrinkImageUrl(drinkId: string): string {
 export function getLabelImageUrl(drinkId: string): string {
     return getAssetUrl(`labels/${drinkId}.png`);
 }
-
-/**
- * 获取默认饮料图片路径
- * @returns 默认饮料图片路径
- */
-export function getDefaultDrinkImageUrl(): string {
-    return getAssetUrl('drinks/default.png');
-}
-
-/**
- * 获取默认海报图片路径
- * @returns 默认海报图片路径
- */
-export function getDefaultLabelImageUrl(): string {
-    return getAssetUrl('labels/default.png');
-}

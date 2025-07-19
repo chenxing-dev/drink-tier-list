@@ -5,10 +5,10 @@ export default function TierList({ drinks }: { drinks: Drink[] }) {
     const sortType = 'time-desc'
 
     const tierLevels: TierLevel[] = [
-        { id: 'S', label: 'S级', description: '强烈推荐', color: 'bg-red-500' },
-        { id: 'A', label: 'A级', description: '值得尝试', color: 'bg-orange-500' },
-        { id: 'B', label: 'B级', description: '普通一般', color: 'bg-yellow-400' },
-        { id: 'C', label: 'C级', description: '不太推荐', color: 'bg-green-500' },
+        { id: 'S', label: 'S级', description: '专程去买', color: 'bg-red-500' },
+        { id: 'A', label: 'A级', description: '顺路会买', color: 'bg-orange-500' },
+        { id: 'B', label: 'B级', description: '有券才买', color: 'bg-yellow-400' },
+        { id: 'C', label: 'C级', description: '免费才喝', color: 'bg-green-500' },
         { id: 'D', label: 'D级', description: '难喝避雷', color: 'bg-purple-500' }
     ];
 
