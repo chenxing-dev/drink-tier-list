@@ -3,7 +3,6 @@ import TierRow from './TierRow';
 
 export default function TierList({ drinks }: { drinks: Drink[] }) {
     const sortType = 'time-desc'
-
     const tierLevels: TierLevel[] = [
         { id: 'S', label: 'S级', description: '专程去买', color: 'bg-red-500' },
         { id: 'A', label: 'A级', description: '顺路会买', color: 'bg-orange-500' },
@@ -11,7 +10,6 @@ export default function TierList({ drinks }: { drinks: Drink[] }) {
         { id: 'C', label: 'C级', description: '免费才喝', color: 'bg-green-500' },
         { id: 'D', label: 'D级', description: '难喝避雷', color: 'bg-purple-500' }
     ];
-
     // 排序函数
     const sortDrinks = (drinks: Drink[], type: string): Drink[] => {
         return [...drinks].sort((a, b) => {
@@ -31,7 +29,6 @@ export default function TierList({ drinks }: { drinks: Drink[] }) {
             }
         });
     };
-
     return (
         <div className="tier-list w-full bg-white border-x-4 border-t-4 border-black shadow-[10px_10px_0_-3px_#000]">
             {/* 等级行 */}
