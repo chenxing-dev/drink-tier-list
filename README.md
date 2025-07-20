@@ -9,7 +9,7 @@
 
 这是一个采用Neobrutalism风格的饮料测评Tier List网页
 
-![网站截图](screenshot.png)
+![网站截图](preview.gif)
 
 ## 特点 ✨
 
