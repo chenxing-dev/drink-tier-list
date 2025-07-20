@@ -58,8 +58,8 @@ export default function BubbleGameModal({ onClose }: { onClose: () => void }) {
     setScore(prev => prev + points);
     setBubbles(prev => prev.filter(bubble => bubble.id !== id));
 
-    // 添加音效（在实际项目中需要添加音效文件）
-    // new Audio('/pop-sound.mp3').play().catch(e => console.log("Audio play failed:", e));
+    // 添加音效
+    new Audio('/pop.m4a').play().catch(e => console.log("Audio play failed:", e));
   };
 
   // 游戏循环
