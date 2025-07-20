@@ -7,7 +7,7 @@ export const drinks: Drink[] = [
     name: "超级大瓜",
     price: 18.04,
     tier: "C",
-    tags: ["西瓜", "椰奶"],
+    tags: ["西瓜", "椰奶", "奶冻"],
     type: "茶饮",
     date: "2025-07-12",
     comment: "西瓜果肉多，清爽不甜腻。不过奶冻有点多余，下次飞奶冻"
@@ -18,7 +18,7 @@ export const drinks: Drink[] = [
     name: "葡萄冰萃美式",
     price: 11.9,
     tier: "S",
-    tags: ["葡萄", "美式", "气泡水"],
+    tags: ["葡萄", "咖啡", "气泡水"],
     type: "咖啡",
     date: "2025-07-13",
     comment: "葡萄和咖啡的混搭，第一口有点诡异，但越喝越上头！"
@@ -29,22 +29,22 @@ export const drinks: Drink[] = [
     name: "栀子花香拿铁",
     price: 9.9,
     tier: "C",
-    tags: ["拿铁"],
+    tags: ["花香", "拿铁"],
     type: "咖啡",
     date: "2025-07-17",
     comment: "不喜欢，花香没有，香精味重"
   },
-  // {
-  //   id: "LK0003",
-  //   brand: "瑞幸咖啡",
-  //   name: "小黄油美式",
-  //   price: 9.9,
-  //   tier: "C",
-  //   tags: ["拿铁"],
-  //   type: "咖啡",
-  //   date: "2025-07-18",
-  //   comment: "黄油？焦糖拿铁还差不多"
-  // },
+  {
+    id: "LK0003",
+    brand: "瑞幸咖啡",
+    name: "小黄油美式",
+    price: 9.9,
+    tier: "C",
+    tags: ["拿铁"],
+    type: "咖啡",
+    date: "2025-07-18",
+    comment: "黄油？焦糖拿铁还差不多"
+  },
   {
     id: "LK0004",
     brand: "瑞幸咖啡",
@@ -73,7 +73,7 @@ export const drinks: Drink[] = [
     name: "美式",
     price: 15.9,
     tier: "B",
-    tags: ["美式"],
+    tags: ["咖啡"],
     type: "咖啡",
     date: "2025-07-14",
     comment: "搭早餐买才划算"
@@ -84,7 +84,7 @@ export const drinks: Drink[] = [
     name: "浓浓抹茶拿铁",
     price: 9.9,
     tier: "C",
-    tags: ["清淡", "不腻"],
+    tags: ["抹茶", "拿铁"],
     type: "咖啡",
     date: "2025-07-13",
     comment: "有咖啡版。说好的'浓浓'抹茶呢？！喝起来像掺了水的绿茶牛奶，而且根本没咖啡味"
@@ -95,7 +95,7 @@ export const drinks: Drink[] = [
     name: "哈基米宝宝蛋挞",
     price: 10,
     tier: "D",
-    tags: ["太甜", "实物不符"],
+    tags: ["蛋挞", "棉花糖"],
     type: "甜品",
     date: "2025-07-08",
     comment: "名字可爱，实物丑到不忍直视，甜到当场糖尿病。10块买2个缩小版不如买原味蛋挞"
@@ -106,7 +106,7 @@ export const drinks: Drink[] = [
     name: "荔枝鲜",
     price: 15.2,
     tier: "C",
-    tags: ["荔枝"],
+    tags: ["荔枝", "椰子水"],
     type: "果茶",
     date: "2025-07-14",
     comment: "荔枝果肉超多，但味道淡得跟水一样。爷爷你还是专心泡茶吧！"
@@ -128,7 +128,7 @@ export const drinks: Drink[] = [
     name: "梨花白拿铁",
     price: 15.5,
     tier: "C",
-    tags: ["拿铁"],
+    tags: ["花香", "拿铁"],
     type: "咖啡",
     date: "2025-07-16",
     comment: "名字很诗意，味道很一般"
@@ -150,22 +150,22 @@ export const drinks: Drink[] = [
     name: "麒麟瓜柠檬茶",
     price: 6,
     tier: "B",
-    tags: ["西瓜", "柠檬茶"],
+    tags: ["西瓜", "柠檬", "乌龙"],
     type: "果茶",
     date: "2025-07-16",
     comment: "活动价6元，虽然西瓜果肉多多，但柠檬的酸完全盖住了西瓜的甜"
   },
-  // {
-  //   id: "CL0001",
-  //   brand: "春莱",
-  //   name: "泰式芒果糯米冰",
-  //   price: 21,
-  //   tier: "B",
-  //   tags: ["芒果", "糯米"],
-  //   type: "奶茶",
-  //   date: "2025-07-18",
-  //   comment: "21块喝芒果味糯米饭！没果肉，一杯下去饱腹感太强，当饭吃吧！"
-  // },
+  {
+    id: "CL0001",
+    brand: "春莱",
+    name: "泰式芒果糯米冰",
+    price: 21,
+    tier: "B",
+    tags: ["芒果", "椰奶", "糯米"],
+    type: "奶茶",
+    date: "2025-07-18",
+    comment: "21块喝芒果味糯米饭！没果肉，一杯下去饱腹感太强，当饭吃吧！"
+  },
   {
     id: "ZR0001",
     brand: "周容记茶铺",
@@ -177,15 +177,15 @@ export const drinks: Drink[] = [
     date: "2025-07-19",
     comment: "甘蔗清甜，解渴，"
   },
-  // {
-  //   id: "LL0001",
-  //   brand: "LINEE林里",
-  //   name: "招牌手打柠檬茶",
-  //   price: 9.9,
-  //   tier: "C",
-  //   tags: ["柠檬", "红茶"],
-  //   type: "果茶",
-  //   date: "2025-07-19",
-  //   comment: "喝起来像泡了三天的茶包，柠檬很涩，7分糖甜度不够"
-  // }
+  {
+    id: "LL0001",
+    brand: "LINEE林里",
+    name: "招牌手打柠檬茶",
+    price: 9.9,
+    tier: "C",
+    tags: ["柠檬", "红茶"],
+    type: "果茶",
+    date: "2025-07-19",
+    comment: "喝起来像泡了三天的茶包，柠檬很涩，7分糖甜度不够"
+  }
 ];
