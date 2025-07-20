@@ -3,7 +3,7 @@ import type { FunctionalComponent } from "preact";
 const MembershipFeedback: FunctionalComponent = () => (
     <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
         <div className="bg-white border-4 border-black p-6 shadow-neo animate-ping-once">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-black">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-16 w-16 text-yellow-500"
