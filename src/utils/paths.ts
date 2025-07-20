@@ -13,7 +13,7 @@ export function getAssetUrl(path: string): string {
  * @returns 饮料图片完整路径
  */
 export function getDrinkImageUrl(drinkId: string): string {
-    return getAssetUrl(`drinks/${drinkId}.png`);
+    return getAssetUrl(`drinks/${drinkId}.webp`);
 }
 
 /**
@@ -22,5 +22,5 @@ export function getDrinkImageUrl(drinkId: string): string {
  * @returns Label图片完整路径
  */
 export function getLabelImageUrl(drinkId: string): string {
-    return getAssetUrl(`labels/${drinkId}.png`);
+    return getAssetUrl(`labels/${drinkId}.webp`);
 }
