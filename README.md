@@ -1,4 +1,4 @@
-# 饮料测评图鉴 🥤
+# 饮料等级榜 Tier List 🥤
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vite](https://img.shields.io/badge/Vite-4.0-blue)](https://vitejs.dev/)

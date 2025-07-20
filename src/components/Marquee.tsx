@@ -1,12 +1,28 @@
+import { drinks } from "../data/drinks";
+
+
+// 定义获取最新饮品的函数
+function getLatestDrinkNameByTier(tier: string): string | null {
+  const filtered = drinks.filter(drink => drink.tier === tier);
+  if (filtered.length === 0) {
+    return null;
+  }
+  // 按日期降序排序（最新的在前）
+  filtered.sort((a, b) => b.date.localeCompare(a.date));
+  return filtered[0].name;
+}
+const latestS = getLatestDrinkNameByTier('S') || '清润甘蔗柠绿';
+const latestD = getLatestDrinkNameByTier('D') || '小黄油美式';
+
 export default function Marquee() {
   // 跑马灯广告语
   const marqueeTexts = [
-    ["🔥", "新品上市：冰爽西瓜啵啵茶，限时8折优惠！"],
-    ["🎉", "会员专享：积分兑换免费饮品，立即加入！"],
-    ["🌟", "分享测评赢好礼：每月评选最佳测评师！"],
-    ["💥", "周末狂欢：每周五全场饮料买一送一！"],
-    ["✨", "签到有礼：连续签到7天送限定周边！"],
-    ["🥤", "今日推荐：葡萄冰萃美式，清爽一夏！"]
+    ["🍉", "新品上市：冰爽西瓜啵啵茶！"],
+    ["💡", "冷知识：'鸭屎香'其实是乌龙茶！"],
+    ["📝", "投稿你的饮料测评！"],
+    ["👑", `S级推荐：${latestS}yyds！`],
+    ["🚫", `避雷警告：${latestD}喝了想打12345！`],
+    ["🥤", `今日推荐：葡萄冰萃美式，清爽一夏！`]
   ];
   return (
     <>
