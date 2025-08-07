@@ -21,4 +21,5 @@
 cwebp -q 80 input.jpg -o output.webp
 
 ## 批量转换（递归文件夹）
-find ./public/drinks/ -name "*.png" -exec sh -c 'cwebp -q 80 "$0" -o "${0%.*}.webp"' {} \;
+find ./public/drinks/ -name "*.png" -exec sh -c 'cwebp -q 60 "$0" -o "${0%.*}.webp"' {} \;
+find ./public/labels/ -name "*.png" -exec sh -c 'cwebp -q 60 "$0" -o "${0%.*}.webp"' {} \;
