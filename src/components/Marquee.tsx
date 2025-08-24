@@ -17,9 +17,8 @@ const latestD = getLatestDrinkNameByTier('D') || '小黄油美式';
 export default function Marquee() {
   // 跑马灯广告语
   const marqueeTexts = [
-    ["🍉", "新品上市：冰爽西瓜啵啵茶！"],
     ["💡", "冷知识：'鸭屎香'其实是乌龙茶！"],
-    ["📝", "投稿你的饮料测评！"],
+    ["⏸️", "测评暂告一段落，感谢大家的支持与喜爱！"],
     ["👑", `S级推荐：${latestS}yyds！`],
     ["🚫", `避雷警告：${latestD}喝了想打12345！`],
     ["🥤", `今日推荐：葡萄冰萃美式，清爽一夏！`]

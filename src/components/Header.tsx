@@ -7,14 +7,18 @@ export default function Header({ drinks }: { drinks: Drink[] }) {
 
   return (
     <header className="bg-white border-b-4 border-black px-4 md:px-6 py-3">
-      <div className="flex flex-row justify-between items-center gap-3">
+      <div className="relative flex flex-row justify-between items-center gap-3">
         {/* 左侧标题区域 */}
         <div className="flex items-end md:gap-2">
           {/* Logo */}
           <LazyImage src="logo.svg" alt="Logo" className="w-12 h-12" />
 
           {/* 文字LOGO */}
-          <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight mb-0.5">饮料等级榜</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight mb-0.5">
+            2025夏季饮品测评合集
+            <div class="absolute top-6 right-6 z-10 border-10 border-red-700 text-red-700 px-6 py-2 rotate-12 text-4xl font-black text-shadow-md text-shadow-red-100 shadow-sm shadow-red-100 opacity-90">已归档
+            </div>
+          </h1>
           {/* 移动端隐藏的副标题 */}
           <p className="hidden md:block text-neutral-700 font-medium italic border-l-2 border-black ml-2 pl-3 leading-tight mb-1">好喝难喝，喝过才敢评</p>
         </div>
