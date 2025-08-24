@@ -6,12 +6,12 @@ export default function Header({ drinks }: { drinks: Drink[] }) {
   const brandCount = new Set(drinks.map(d => d.brand)).size;
 
   return (
-    <header className="bg-white border-b-4 border-black px-4 md:px-6 py-3">
+    <header className="bg-white border-b-4 border-black px-2 md:px-4 md:px-6 py-3">
       <div className="relative flex flex-row justify-between items-center gap-3">
         {/* 左侧标题区域 */}
-        <div className="flex items-end md:gap-2">
+        <div className="flex items-end gap-2">
           {/* Logo */}
-          <LazyImage src="logo.svg" alt="Logo" className="w-12 h-12" />
+          <LazyImage src="logo.svg" alt="Logo" className="w-12 h-12 self-center" />
 
           {/* 文字LOGO */}
           <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight mb-0.5">
