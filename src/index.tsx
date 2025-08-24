@@ -22,7 +22,7 @@ export function App() {
     <div className="min-h-screen flex flex-col bg-neutral-100">
       <Header drinks={drinks} />
       <Marquee />
-      <main className="flex-grow flex flex-col items-center w-full mx-auto px-4 py-4">
+      <main className="flex-grow flex flex-col items-center w-full mx-auto px-2 md:px-4 py-4">
         <TierList drinks={drinks} />
         {/* 会员加入反馈动画 */}
         {membershipFeedback && <MembershipFeedback />}
